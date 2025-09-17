@@ -22,7 +22,7 @@ class VoiceRecorderSheet extends StatefulWidget {
 
   final BuildContext context;
   final String voiceFileName;
-  final ValueSetter<FullPickerOutput> onSelected;
+  final ValueSetter<FullPickerPlusOutput> onSelected;
   final ValueSetter<int> onError;
 
   @override
@@ -112,9 +112,9 @@ class _SheetSelectState extends State<VoiceRecorderSheet> {
                       if (lastUint8List != null) {
                         userClose = false;
                         widget.onSelected.call(
-                          FullPickerOutput(
+                          FullPickerPlusOutput(
                             bytes: <Uint8List?>[lastUint8List],
-                            fileType: FullPickerType.voiceRecorder,
+                            fileType: FullPickerPlusType.voiceRecorder,
                             name: <String?>[widget.voiceFileName],
                             file: <File?>[lastFile],
                             xFile: <XFile?>[

@@ -316,9 +316,9 @@ class _CameraState extends State<Camera> with WidgetsBindingObserver {
 
         Navigator.pop(
           context,
-          FullPickerOutput(
+          FullPickerPlusOutput(
             bytes: <Uint8List?>[await file.readAsBytes()],
-            fileType: FullPickerType.image,
+            fileType: FullPickerPlusType.image,
             name: <String?>[fileName + extension],
             file: <File?>[File(file.path)],
             xFile: <XFile?>[
@@ -351,9 +351,9 @@ class _CameraState extends State<Camera> with WidgetsBindingObserver {
 
         Navigator.pop(
           context,
-          FullPickerOutput(
+          FullPickerPlusOutput(
             bytes: <Uint8List?>[await file.readAsBytes()],
-            fileType: FullPickerType.video,
+            fileType: FullPickerPlusType.video,
             name: <String?>['${widget.prefixName}$fileName.mp4'],
             file: () {
               try {

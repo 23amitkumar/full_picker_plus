@@ -65,10 +65,10 @@ String generateRandomString() {
 }
 
 /// get files
-Future<FullPickerOutput?> getFiles({
+Future<FullPickerPlusOutput?> getFiles({
   required final BuildContext context,
   required final FileType fileType,
-  required final FullPickerType pickerFileType,
+  required final FullPickerPlusType pickerFileType,
   required final String prefixName,
   required final ValueSetter<bool> onIsUserChange,
   required final ValueSetter<int>? onError,
@@ -213,26 +213,26 @@ Future<FullPickerOutput?> getFiles({
         progressDialog.dismiss();
       }
 
-      if (pickerFileType == FullPickerType.mixed) {
+      if (pickerFileType == FullPickerPlusType.mixed) {
         if (numberPicture == 0 && numberVideo != 0) {
-          return FullPickerOutput(
+          return FullPickerPlusOutput(
             bytes: bytes,
-            fileType: FullPickerType.video,
+            fileType: FullPickerPlusType.video,
             name: name,
             file: files,
             xFile: xFiles,
           );
         } else if (numberPicture != 0 && numberVideo == 0) {
-          return FullPickerOutput(
+          return FullPickerPlusOutput(
             bytes: bytes,
-            fileType: FullPickerType.image,
+            fileType: FullPickerPlusType.image,
             name: name,
             file: files,
             xFile: xFiles,
           );
         } else {
           // mixed
-          return FullPickerOutput(
+          return FullPickerPlusOutput(
             bytes: bytes,
             fileType: pickerFileType,
             name: name,
@@ -241,7 +241,7 @@ Future<FullPickerOutput?> getFiles({
           );
         }
       } else {
-        return FullPickerOutput(
+        return FullPickerPlusOutput(
           bytes: bytes,
           fileType: pickerFileType,
           name: name,
@@ -272,7 +272,7 @@ Future<void> getFullPicker({
   required final int id,
   required final BuildContext context,
   required final ValueSetter<bool> onIsUserChange,
-  required final ValueSetter<FullPickerOutput> onSelected,
+  required final ValueSetter<FullPickerPlusOutput> onSelected,
   required final ValueSetter<int>? onError,
   required final bool image,
   required final bool video,
@@ -289,7 +289,7 @@ Future<void> getFullPicker({
   required final bool inSheet,
 }) async {
   onIsUserChange.call(false);
-  FullPickerOutput? value;
+  FullPickerPlusOutput? value;
 
   if (id == 1) {
     /// gallery
@@ -299,7 +299,7 @@ Future<void> getFullPicker({
         context: context,
         videoCompressor: videoCompressor,
         fileType: FileType.custom,
-        pickerFileType: FullPickerType.mixed,
+        pickerFileType: FullPickerPlusType.mixed,
         prefixName: prefixName,
         inSheet: inSheet,
         allowedExtensions: <String>[
@@ -322,7 +322,7 @@ Future<void> getFullPicker({
       value = await getFiles(
         context: context,
         videoCompressor: videoCompressor,
-        pickerFileType: FullPickerType.image,
+        pickerFileType: FullPickerPlusType.image,
         prefixName: prefixName,
         fileType: FileType.custom,
         allowedExtensions: <String>[
@@ -344,7 +344,7 @@ Future<void> getFullPicker({
         context: context,
         videoCompressor: videoCompressor,
         fileType: FileType.video,
-        pickerFileType: FullPickerType.video,
+        pickerFileType: FullPickerPlusType.video,
         prefixName: prefixName,
         imageCropper: imageCropper,
         inSheet: inSheet,
@@ -400,14 +400,14 @@ Future<void> getFullPicker({
       if (context.mounted) {
         checkError(inSheet: inSheet, onIsUserChange, context, isSelected: true);
       }
-      onSelected.call(value as FullPickerOutput);
+      onSelected.call(value as FullPickerPlusOutput);
     }
   } else if (id == 3) {
     // File
     value = await getFiles(
       context: context,
       fileType: FileType.any,
-      pickerFileType: FullPickerType.file,
+      pickerFileType: FullPickerPlusType.file,
       prefixName: prefixName,
       multiFile: multiFile,
       inSheet: inSheet,
@@ -439,7 +439,7 @@ Future<void> getFullPicker({
       VoiceRecorderSheet(
         context: context,
         voiceFileName: '$prefixName$fileName.wav',
-        onSelected: (final FullPickerOutput value) {
+        onSelected: (final FullPickerPlusOutput value) {
           checkError(
             inSheet: inSheet,
             onIsUserChange,
@@ -474,7 +474,7 @@ Future<void> getFullPicker({
     if (url != null) {
       if (context.mounted) {
         checkError(inSheet: inSheet, onIsUserChange, context, isSelected: true);
-        onSelected.call(FullPickerOutput.data(url, FullPickerType.url));
+        onSelected.call(FullPickerPlusOutput.data(url, FullPickerPlusType.url));
       }
     } else {
       if (context.mounted) {

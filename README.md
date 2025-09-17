@@ -21,7 +21,7 @@ A Flutter package that helps you select files in different modes
 Quick simple usage example:
 
 ```dart
-FullPicker(
+FullPickerPlus(
   context: context,
   prefixName: "test",
   file: true,
@@ -74,24 +74,6 @@ android:maxSdkVersion="28"/>
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-```
-
-Include this in your Project-level build.gradle file:
-```groovy
-allprojects {
-    repositories {
-        .
-        .
-        .
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-
-Include this in your Module-level build.gradle file:
-
-```groovy
-implementation 'com.github.AbedElazizShe:LightCompressor:1.0.0
 ```
 
 ## Image Cropper
@@ -166,7 +148,7 @@ min SDK: 11.0
 There is a possibility of customization for different languages in this package</br>
 
 ```dart
-FullPickerLanguage language = FullPickerLanguage.copy(
+FullPickerPlusLanguage language = FullPickerPlusLanguage.copy(
     camera: S.current.camera,
     selectFile: S.current.selectFile,
     file: S.current.file,
@@ -183,7 +165,7 @@ FullPickerLanguage language = FullPickerLanguage.copy(
     noVoiceRecorded: S.current.noVoiceRecorded,
     denyAccessPermission: S.current.denyAccessPermission);
     
-FullPicker(
+FullPickerPlus(
   ...
   language: language,
   ...

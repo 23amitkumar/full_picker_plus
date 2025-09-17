@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 /// Widget icon
 ///
 /// ```dart
-/// fullPickerWidgetIcon: FullPickerWidgetIcon.copy(
+/// fullPickerWidgetIcon: FullPickerPlusWidgetIcon.copy(
 /// 	gallery: Icon(Icons.gamepad, size: 30),
 /// ),
 /// ```
-class FullPickerWidgetIcon {
-  FullPickerWidgetIcon();
+class FullPickerPlusWidgetIcon {
+  FullPickerPlusWidgetIcon();
 
   /// help for cheng widget icons
-  FullPickerWidgetIcon.copy({
+  FullPickerPlusWidgetIcon.copy({
     this.gallery,
     this.camera,
     this.file,

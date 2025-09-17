@@ -24,7 +24,7 @@ class SelectSheet extends StatefulWidget {
   });
 
   final BuildContext context;
-  final ValueSetter<FullPickerOutput> onSelected;
+  final ValueSetter<FullPickerPlusOutput> onSelected;
   final ValueSetter<int>? onError;
   final bool image;
   final bool video;
@@ -38,7 +38,7 @@ class SelectSheet extends StatefulWidget {
   final bool multiFile;
   final String bodyTextUrl;
   final String prefixName;
-  final FullPickerWidgetIcon fullPickerWidgetIcon;
+  final FullPickerPlusWidgetIcon fullPickerWidgetIcon;
 
   @override
   State<SelectSheet> createState() => _SheetSelectState();

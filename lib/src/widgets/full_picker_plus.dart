@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:full_picker_plus/full_picker_plus.dart';
 
 /// for cheng language
-FullPickerLanguage globalFullPickerLanguage = FullPickerLanguage();
+FullPickerPlusLanguage globalFullPickerLanguage = FullPickerPlusLanguage();
 
-class FullPicker {
-  FullPicker({
+class FullPickerPlus {
+  FullPickerPlus({
     required this.context,
     required this.onSelected,
-    final FullPickerLanguage? language,
+    final FullPickerPlusLanguage? language,
     this.image = true,
     this.video = false,
     this.file = false,
@@ -88,7 +88,7 @@ class FullPicker {
       showSheet(
         SelectSheet(
           video: video,
-          fullPickerWidgetIcon: fullPickerWidgetIcon ?? FullPickerWidgetIcon(),
+          fullPickerWidgetIcon: fullPickerWidgetIcon ?? FullPickerPlusWidgetIcon(),
           file: file,
           voiceRecorder: voiceRecorder,
           url: url,
@@ -121,10 +121,10 @@ class FullPicker {
   final bool videoCompressor;
   final bool imageCropper;
   final bool multiFile;
-  final ValueSetter<FullPickerOutput> onSelected;
+  final ValueSetter<FullPickerPlusOutput> onSelected;
   final ValueSetter<int>? onError;
   final BuildContext context;
-  final FullPickerWidgetIcon? fullPickerWidgetIcon;
+  final FullPickerPlusWidgetIcon? fullPickerWidgetIcon;
 
   /// show file picker for single item
   void openAloneFullPicker(final int id) {
@@ -152,8 +152,8 @@ class FullPicker {
 }
 
 /// main Output class
-class FullPickerOutput {
-  FullPickerOutput({
+class FullPickerPlusOutput {
+  FullPickerPlusOutput({
     required this.bytes,
     required this.file,
     required this.xFile,
@@ -161,7 +161,7 @@ class FullPickerOutput {
     required this.name,
   });
 
-  FullPickerOutput.data(this.data, this.fileType);
+  FullPickerPlusOutput.data(this.data, this.fileType);
 
   /// main bytes
   late List<Uint8List?> bytes;
@@ -173,11 +173,11 @@ class FullPickerOutput {
   late dynamic data;
 
   /// type file
-  late FullPickerType fileType;
+  late FullPickerPlusType fileType;
 }
 
 /// File Picker Types
-enum FullPickerType { image, video, file, voiceRecorder, url, mixed }
+enum FullPickerPlusType { image, video, file, voiceRecorder, url, mixed }
 
 /// item sheet model
 class ItemSheet {

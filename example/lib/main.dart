@@ -7,36 +7,38 @@ void main() {
   runApp(const MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(final BuildContext context) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          colorScheme: ThemeData().colorScheme.copyWith(primary: Colors.black),
-        ),
-        home: const FilePickerTest(),
-      );
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.light,
+        colorScheme: ThemeData().colorScheme.copyWith(primary: Colors.black),
+      ),
+      home: const FilePickerTest(),
+    );
 }
+
 
 class FilePickerTest extends StatefulWidget {
   const FilePickerTest({super.key});
 
   @override
-  State<FilePickerTest> createState() => _ExonFilePicker();
+  State<FilePickerTest> createState() => _FilePickerTestState();
 }
 
-class _ExonFilePicker extends State<FilePickerTest> {
+class _FilePickerTestState extends State<FilePickerTest> {
   ValueNotifier<double> onProgress = ValueNotifier<double>(0);
 
   String info = 'Not Selected !';
 
   @override
   Widget build(final BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Full Picker Example')),
+        appBar: AppBar(title: const Text('Picker Example')),
         body: Column(
           children: <Widget>[
             ElevatedButton(
@@ -46,12 +48,12 @@ class _ExonFilePicker extends State<FilePickerTest> {
               child: const Padding(
                 padding: EdgeInsets.all(8),
                 child: Text(
-                  'Open Full Picker',
+                  'Open Picker',
                   style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
               ),
               onPressed: () {
-                FullPicker(
+                FullPickerPlus(
                   context: context,
                   prefixName: 'test',
                   file: true,
@@ -61,7 +63,7 @@ class _ExonFilePicker extends State<FilePickerTest> {
                   imageCamera: true,
                   imageCropper: true,
                   multiFile: true,
-                  // fullPickerWidgetIcon: FullPickerWidgetIcon.copy(
+                  // fullPickerWidgetIcon: FullPickerPlusWidgetIcon.copy(
                   //   gallery: Icon(Icons.gamepad, size: 30),
                   // ),
                   url: true,
@@ -70,12 +72,12 @@ class _ExonFilePicker extends State<FilePickerTest> {
                       print(' ----  onError ----=$value');
                     }
                   },
-                  onSelected: (final FullPickerOutput value) async {
+                  onSelected: (final FullPickerPlusOutput value) async {
                     if (kDebugMode) {
                       print(' ----  onSelected ----');
                     }
 
-                    if (value.fileType != FullPickerType.url) {
+                    if (value.fileType != FullPickerPlusType.url) {
                       info = '';
                       for (int i = 0; i < value.name.length; i++) {
                         final String fileSizeInt = fileSize(
