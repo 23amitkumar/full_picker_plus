@@ -1,6 +1,6 @@
 name: full_picker_plus
 description: A Flutter package that helps you select files in different modes.
-version: 1.0.0+1
+version: 0.0.1
 
 
 homepage: https://github.com/23amitkumar/full_picker_plus
@@ -74,5 +74,5 @@ dev_dependencies:
     sdk: flutter
 
 screenshots:
-  - description: Full Picker logo.
+  - description: Full Picker Plus logo.
     path: screenshots/logo.png

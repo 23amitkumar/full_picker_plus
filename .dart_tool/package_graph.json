@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "full_picker_plus",
-      "version": "1.0.0+1",
+      "version": "0.0.1",
       "dependencies": [
         "camera",
         "cross_file",
