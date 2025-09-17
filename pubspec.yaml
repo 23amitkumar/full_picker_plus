@@ -1,0 +1,78 @@
+name: full_picker_plus
+description: A Flutter package that helps you select files in different modes.
+version: 1.0.0+1
+
+
+homepage: https://github.com/23amitkumar/full_picker_plus
+repository: https://github.com/23amitkumar/full_picker_plus
+issue_tracker: https://github.com/23amitkumar/full_picker_plus/issues
+
+topics:
+  - picker
+  - camera
+  - cropper
+  - compressor
+  - record
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Camera
+  camera: ^0.11.2
+
+  # Path provider
+  path_provider: ^2.1.5
+
+  # Toast
+  fluttertoast: ^8.2.12
+
+  # Crop
+  image_cropper: ^9.1.0
+
+  # File Picker
+  file_picker: ^10.3.3
+
+  # Compressor Video
+  light_compressor: ^2.2.0
+
+  # Recorder
+  record: ^6.1.1
+
+  # Stop watch timer
+  stop_watch_timer: ^3.2.2
+
+  # Http
+  http: ^1.5.0
+
+  # Uuid
+  uuid: ^4.5.1
+
+  # Cross file
+  cross_file: ^0.3.4+2
+
+  # Mime
+  mime: ^2.0.0
+
+  # Win32
+  win32: ^5.14.0
+
+  # Path
+  path: ^1.9.1
+
+  # Device orientation
+  device_orientation: ^1.0.0
+
+  # Image
+  image: ^4.5.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+screenshots:
+  - description: Full Picker logo.
+    path: screenshots/logo.png
