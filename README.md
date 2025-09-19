@@ -85,21 +85,10 @@ If you need to crop the image (only support Android And IOS), add the following
 
 ````xml
 <activity
-    android:name="com.yalantis.ucrop.UCropActivity"
-    android:screenOrientation="portrait"
-    android:theme="@style/Ucrop.CropTheme"/>
+        android:name="com.yalantis.ucrop.UCropActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 ````
-#### Note:
-- From v1.2.0, you need to migrate your android project to v2 embedding ([detail](https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects))
-
-- The native plugin (uCrop) does not yet support Edge-to-Edge mode in Android 15. To work around this issue, please add the following code to your Android project (inside the android folder):
-    - Add follwowing code to file `android/app/src/main/res/values/styles.xml`
-  ```xml
-  <resources>
-    ....
-    <style name="Ucrop.CropTheme" parent="Theme.AppCompat.Light.NoActionBar"/> <!--add this line-->
-  </resources>
-  ```
 
 ### iOS
 - No configuration required
