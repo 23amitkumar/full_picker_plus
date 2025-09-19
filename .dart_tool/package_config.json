@@ -147,7 +147,7 @@
     },
     {
       "name": "fluttertoast",
-      "rootUri": "file:///Users/cqlios/.pub-cache/hosted/pub.dev/fluttertoast-8.2.12",
+      "rootUri": "file:///Users/cqlios/.pub-cache/hosted/pub.dev/fluttertoast-8.2.14",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -171,7 +171,7 @@
     },
     {
       "name": "image_cropper",
-      "rootUri": "file:///Users/cqlios/.pub-cache/hosted/pub.dev/image_cropper-9.1.0",
+      "rootUri": "file:///Users/cqlios/.pub-cache/hosted/pub.dev/image_cropper-10.0.0+1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -183,7 +183,7 @@
     },
     {
       "name": "image_cropper_platform_interface",
-      "rootUri": "file:///Users/cqlios/.pub-cache/hosted/pub.dev/image_cropper_platform_interface-7.1.0",
+      "rootUri": "file:///Users/cqlios/.pub-cache/hosted/pub.dev/image_cropper_platform_interface-7.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },

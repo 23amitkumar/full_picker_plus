@@ -100,22 +100,6 @@ If you need to crop the image (only support Android And IOS), add the following
     <style name="Ucrop.CropTheme" parent="Theme.AppCompat.Light.NoActionBar"/> <!--add this line-->
   </resources>
   ```
-    - Create new file `android/app/src/main/res/values-v35/styles.xml` and add the following code to it:
-  ```xml
-  <?xml version="1.0" encoding="utf-8"?>
-  <resources>
-    <style name="Ucrop.CropTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
-    </style>
-  </resources>
-  ```
-    - Modify the decleration of `UCropActivity` in your `AndroidManifest.xml`:
-  ```xml
-  <activity
-    android:name="com.yalantis.ucrop.UCropActivity"
-    android:screenOrientation="portrait"
-    android:theme="@style/Ucrop.CropTheme"/> <!--this line is updated-->
-  ```
 
 ### iOS
 - No configuration required

@@ -156,7 +156,7 @@
     },
     {
       "name": "image_cropper",
-      "version": "9.1.0",
+      "version": "10.0.0+1",
       "dependencies": [
         "flutter",
         "image_cropper_for_web",
@@ -165,7 +165,7 @@
     },
     {
       "name": "fluttertoast",
-      "version": "8.2.12",
+      "version": "8.2.14",
       "dependencies": [
         "flutter",
         "flutter_web_plugins",
@@ -465,7 +465,7 @@
     },
     {
       "name": "image_cropper_platform_interface",
-      "version": "7.1.0",
+      "version": "7.2.0",
       "dependencies": [
         "flutter",
         "http",
